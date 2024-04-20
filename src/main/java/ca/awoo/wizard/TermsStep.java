@@ -40,7 +40,6 @@ public class TermsStep extends WizardStep<Void, Void>{
         JTextArea textArea = new JTextArea(terms);
         textArea.setEditable(false);
         textArea.setFont(new Font(Font.MONOSPACED, Font.PLAIN, 12));
-        System.out.println(textArea.getFont());
         JScrollPane scrollPane = new JScrollPane(textArea);
         Dimension scrollPaneSize = scrollPane.getSize();
         scrollPaneSize.height = Integer.MAX_VALUE;
