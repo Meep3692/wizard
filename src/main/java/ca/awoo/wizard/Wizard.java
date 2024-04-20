@@ -9,6 +9,7 @@ import javax.swing.border.BevelBorder;
 import ca.awoo.wizard.ExpandingImage.GrowDirection;
 
 import java.awt.FlowLayout;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.awt.BorderLayout;
 
@@ -17,14 +18,14 @@ public class Wizard extends JFrame{
     private final JButton nextButton = new JButton("Next");
     private final JButton cancelButton = new JButton("Cancel");
 
-    public Wizard(WizardManager manager) throws IOException {
-        super("Wizard");
+    public Wizard(WizardManager manager, String title, BufferedImage sideImage) throws IOException {
+        super(title);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(640, 480);
         setLayout(new BorderLayout());
 
-        ExpandingImage sideImage = new ExpandingImage(GrowDirection.VERTICAL, ImageIO.read(getClass().getResourceAsStream("wizard.png")));
-        add(sideImage, BorderLayout.LINE_START);
+        ExpandingImage sideImageComponent = new ExpandingImage(GrowDirection.VERTICAL, sideImage);
+        add(sideImageComponent, BorderLayout.LINE_START);
 
         JPanel controlPanel = new JPanel();
         FlowLayout controlLayout = new FlowLayout();
