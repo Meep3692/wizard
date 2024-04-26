@@ -14,7 +14,7 @@ public abstract class WizardStep<Input, Output> extends JPanel{
 
     private boolean valid = false;
 
-    public boolean isValid(){
+    public boolean isStepValid(){
         return valid;
     }
 
